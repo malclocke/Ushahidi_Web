@@ -55,7 +55,13 @@
                 $('#location_search input').bind('change', zoomMapToSearch);
                 $('#location_search a').bind('click', zoomMapToSearch);
                 $('#location_search').bind('submit', function() { return false; });
-            });
+                var suburbs = [ "Addington", "Avondale", "Avonhead", "Avonside", "Beckenham", "Belfast", "Bexley", "Bishopdale", "Bryndwr", "Burnside", "Burwood", "Cashmere", "City", "Dallington", "Fendalton", "Ferrymead", "Halswell", "Harewood", "Heathcote Valley", "Hoon Hay", "Hornby", "Huntsbury", "Ilam", "Linwood", "Mairehau", "Merivale", "Mount Pleasant", "Mt Pleasant", "Murray Aynsley", "New Brighton", "Opawa", "Papanui", "Phillipstown", "Redcliffs", "Redwood", "Riccarton", "Richmond", "Saint Albans", "St Albans", "Saint Martins", "St Martins", "Shirley", "Somerfield", "Spreydon", "Strowan", "Sumner", "Sydenham", "Upper Riccarton", "Waltham", "Westmorland", "Wigram", "Woolston" ];
+                $('#location_search input').autocomplete(suburbs, {
+                    'formatResult': function(data, position, total) {
+                      return data + ', Christchurch, NZ';
+                    }
+                  });
+                });
         </script>
         </div>
 
